@@ -26,7 +26,8 @@ public class ReputationController {
     @GetMapping
     public List<Reputation> getReputation() {
         log.info("getReputation: {}", LocalDateTime.now());
-        Negative[] negatives = this.restTemplate.getForObject("http:///api/negative", Negative[].class);
+        String url = String.format("http://%s/api/negative", negativeServiceHost);
+        Negative[] negatives = this.restTemplate.getForObject(url, Negative[].class);
         return List.of(
                 new Reputation(1, negatives[0]),
                 new Reputation(1, negatives[1])
