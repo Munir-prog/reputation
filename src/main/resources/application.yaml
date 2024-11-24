@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: reputation
+
+mprog:
+  negative:
+    host: ${NEGATIVE_HOST:negative}
+
+#  cloud:
+#    consul: 8500
+#    host: localhost
+#    discovery:
+#      instance-id: reputation-i1
+
+#server:
+#  port: 8081
